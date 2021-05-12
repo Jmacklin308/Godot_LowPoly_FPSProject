@@ -43,255 +43,265 @@ tonemap_exposure = 0.53
 
 [node name="World" type="Spatial"]
 
-[node name="Navigation" type="Navigation" parent="."]
+[node name="EnvironmentAndNavigation" type="Node" parent="."]
 
-[node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
+[node name="Navigation" type="Navigation" parent="EnvironmentAndNavigation"]
+
+[node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="EnvironmentAndNavigation/Navigation"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0524616, 0, -0.00786877 )
 navmesh = SubResource( 1 )
 
-[node name="Environment" type="Spatial" parent="Navigation/NavigationMeshInstance"]
+[node name="Environment" type="Spatial" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.83214, 0 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="shed" parent="Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 3 )]
+[node name="shed" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.9093, 4.83214, 0.00786877 )
 
-[node name="Walls" type="Spatial" parent="Navigation/NavigationMeshInstance/Environment"]
+[node name="Walls" type="Spatial" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment"]
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="walls" type="Spatial" parent="Navigation/NavigationMeshInstance/Environment/Walls"]
+[node name="walls" type="Spatial" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9854, 4.92958, -30.1674 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="brickwall" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls" instance=ExtResource( 2 )]
+[node name="brickwall" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls" instance=ExtResource( 2 )]
 
-[node name="brickwall2" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls" instance=ExtResource( 2 )]
+[node name="brickwall2" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0 )
 
-[node name="brickwall3" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls" instance=ExtResource( 2 )]
+[node name="brickwall3" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0 )
 
-[node name="brickwall4" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls" instance=ExtResource( 2 )]
+[node name="brickwall4" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0 )
 
-[node name="brickwall5" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls" instance=ExtResource( 2 )]
+[node name="brickwall5" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 0 )
 
-[node name="brickwall6" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls" instance=ExtResource( 2 )]
+[node name="brickwall6" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 0 )
 
-[node name="brickwall7" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls" instance=ExtResource( 2 )]
+[node name="brickwall7" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0 )
 
-[node name="brickwall8" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls" instance=ExtResource( 2 )]
+[node name="brickwall8" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0 )
 
-[node name="brickwall9" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls" instance=ExtResource( 2 )]
+[node name="brickwall9" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, 0 )
 
-[node name="brickwall10" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls" instance=ExtResource( 2 )]
+[node name="brickwall10" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, 0 )
 
-[node name="brickwall11" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls" instance=ExtResource( 2 )]
+[node name="brickwall11" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 0 )
 
-[node name="brickwall12" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls" instance=ExtResource( 2 )]
+[node name="brickwall12" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 0 )
 
-[node name="brickwall13" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls" instance=ExtResource( 2 )]
+[node name="brickwall13" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 0 )
 
-[node name="brickwall14" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls" instance=ExtResource( 2 )]
+[node name="brickwall14" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 0, 0 )
 
-[node name="brickwall15" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls" instance=ExtResource( 2 )]
+[node name="brickwall15" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 0 )
 
-[node name="brickwall16" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls" instance=ExtResource( 2 )]
+[node name="brickwall16" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 0 )
 
-[node name="walls2" type="Spatial" parent="Navigation/NavigationMeshInstance/Environment/Walls"]
+[node name="walls2" type="Spatial" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0341, 4.92958, 33.8326 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="brickwall" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls2" instance=ExtResource( 2 )]
+[node name="brickwall" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls2" instance=ExtResource( 2 )]
 
-[node name="brickwall2" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls2" instance=ExtResource( 2 )]
+[node name="brickwall2" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls2" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0 )
 
-[node name="brickwall3" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls2" instance=ExtResource( 2 )]
+[node name="brickwall3" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls2" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0 )
 
-[node name="brickwall4" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls2" instance=ExtResource( 2 )]
+[node name="brickwall4" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls2" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0 )
 
-[node name="brickwall5" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls2" instance=ExtResource( 2 )]
+[node name="brickwall5" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls2" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 0 )
 
-[node name="brickwall6" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls2" instance=ExtResource( 2 )]
+[node name="brickwall6" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls2" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 0 )
 
-[node name="brickwall7" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls2" instance=ExtResource( 2 )]
+[node name="brickwall7" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls2" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0 )
 
-[node name="brickwall8" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls2" instance=ExtResource( 2 )]
+[node name="brickwall8" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls2" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0 )
 
-[node name="brickwall9" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls2" instance=ExtResource( 2 )]
+[node name="brickwall9" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls2" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, 0 )
 
-[node name="brickwall10" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls2" instance=ExtResource( 2 )]
+[node name="brickwall10" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls2" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, 0 )
 
-[node name="brickwall11" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls2" instance=ExtResource( 2 )]
+[node name="brickwall11" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls2" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 0 )
 
-[node name="brickwall12" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls2" instance=ExtResource( 2 )]
+[node name="brickwall12" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls2" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 0 )
 
-[node name="brickwall13" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls2" instance=ExtResource( 2 )]
+[node name="brickwall13" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls2" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 0 )
 
-[node name="brickwall14" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls2" instance=ExtResource( 2 )]
+[node name="brickwall14" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls2" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 0, 0 )
 
-[node name="brickwall15" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls2" instance=ExtResource( 2 )]
+[node name="brickwall15" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls2" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 0 )
 
-[node name="brickwall16" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls2" instance=ExtResource( 2 )]
+[node name="brickwall16" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls2" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 0 )
 
-[node name="walls3" type="Spatial" parent="Navigation/NavigationMeshInstance/Environment/Walls"]
+[node name="walls3" type="Spatial" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 30.0341, 4.92958, -16.1674 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="brickwall" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls3" instance=ExtResource( 2 )]
+[node name="brickwall" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls3" instance=ExtResource( 2 )]
 
-[node name="brickwall2" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls3" instance=ExtResource( 2 )]
+[node name="brickwall2" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls3" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0 )
 
-[node name="brickwall3" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls3" instance=ExtResource( 2 )]
+[node name="brickwall3" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls3" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0 )
 
-[node name="brickwall4" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls3" instance=ExtResource( 2 )]
+[node name="brickwall4" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls3" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0 )
 
-[node name="brickwall5" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls3" instance=ExtResource( 2 )]
+[node name="brickwall5" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls3" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 0 )
 
-[node name="brickwall6" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls3" instance=ExtResource( 2 )]
+[node name="brickwall6" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls3" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 0 )
 
-[node name="brickwall7" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls3" instance=ExtResource( 2 )]
+[node name="brickwall7" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls3" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0 )
 
-[node name="brickwall8" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls3" instance=ExtResource( 2 )]
+[node name="brickwall8" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls3" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0 )
 
-[node name="brickwall9" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls3" instance=ExtResource( 2 )]
+[node name="brickwall9" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls3" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, 0 )
 
-[node name="brickwall10" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls3" instance=ExtResource( 2 )]
+[node name="brickwall10" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls3" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, 0 )
 
-[node name="brickwall11" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls3" instance=ExtResource( 2 )]
+[node name="brickwall11" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls3" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 0 )
 
-[node name="brickwall12" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls3" instance=ExtResource( 2 )]
+[node name="brickwall12" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls3" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 0 )
 
-[node name="brickwall13" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls3" instance=ExtResource( 2 )]
+[node name="brickwall13" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls3" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 0 )
 
-[node name="brickwall14" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls3" instance=ExtResource( 2 )]
+[node name="brickwall14" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls3" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 0, 0 )
 
-[node name="brickwall15" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls3" instance=ExtResource( 2 )]
+[node name="brickwall15" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls3" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 0 )
 
-[node name="brickwall16" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls3" instance=ExtResource( 2 )]
+[node name="brickwall16" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls3" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 0 )
 
-[node name="walls4" type="Spatial" parent="Navigation/NavigationMeshInstance/Environment/Walls"]
+[node name="walls4" type="Spatial" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -33.9659, 4.92958, -16.1674 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="brickwall" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls4" instance=ExtResource( 2 )]
+[node name="brickwall" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls4" instance=ExtResource( 2 )]
 
-[node name="brickwall2" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls4" instance=ExtResource( 2 )]
+[node name="brickwall2" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls4" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0 )
 
-[node name="brickwall3" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls4" instance=ExtResource( 2 )]
+[node name="brickwall3" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls4" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0 )
 
-[node name="brickwall4" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls4" instance=ExtResource( 2 )]
+[node name="brickwall4" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls4" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0 )
 
-[node name="brickwall5" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls4" instance=ExtResource( 2 )]
+[node name="brickwall5" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls4" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 0 )
 
-[node name="brickwall6" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls4" instance=ExtResource( 2 )]
+[node name="brickwall6" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls4" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 0 )
 
-[node name="brickwall7" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls4" instance=ExtResource( 2 )]
+[node name="brickwall7" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls4" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0 )
 
-[node name="brickwall8" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls4" instance=ExtResource( 2 )]
+[node name="brickwall8" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls4" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0 )
 
-[node name="brickwall9" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls4" instance=ExtResource( 2 )]
+[node name="brickwall9" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls4" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, 0 )
 
-[node name="brickwall10" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls4" instance=ExtResource( 2 )]
+[node name="brickwall10" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls4" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, 0 )
 
-[node name="brickwall11" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls4" instance=ExtResource( 2 )]
+[node name="brickwall11" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls4" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 0 )
 
-[node name="brickwall12" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls4" instance=ExtResource( 2 )]
+[node name="brickwall12" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls4" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 0 )
 
-[node name="brickwall13" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls4" instance=ExtResource( 2 )]
+[node name="brickwall13" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls4" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 0 )
 
-[node name="brickwall14" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls4" instance=ExtResource( 2 )]
+[node name="brickwall14" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls4" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 0, 0 )
 
-[node name="brickwall15" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls4" instance=ExtResource( 2 )]
+[node name="brickwall15" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls4" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 0 )
 
-[node name="brickwall16" parent="Navigation/NavigationMeshInstance/Environment/Walls/walls4" instance=ExtResource( 2 )]
+[node name="brickwall16" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/Walls/walls4" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 0 )
 
-[node name="ground" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Environment"]
+[node name="ground" type="MeshInstance" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment"]
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Environment/ground"]
+[node name="StaticBody" type="StaticBody" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/ground"]
 
-[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Environment/ground/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="EnvironmentAndNavigation/Navigation/NavigationMeshInstance/Environment/ground/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="EnvironmentAndNavigation"]
 environment = SubResource( 6 )
 
-[node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( -0.847614, 0.456394, 0.270657, -0.0917401, -0.628451, 0.77242, 0.522622, 0.629884, 0.574553, 20.5077, 30.0222, 28.1025 )
+[node name="DirectionalLight" type="DirectionalLight" parent="EnvironmentAndNavigation"]
+transform = Transform( -0.847614, 0.456394, 0.270657, -0.0917401, -0.628451, 0.77242, 0.522622, 0.629884, 0.574554, 20.5077, 30.0222, 28.1025 )
 light_color = Color( 0.980392, 0.356863, 0.25098, 1 )
 light_energy = 2.45
 light_indirect_energy = 9.57
 light_specular = 0.51
 shadow_enabled = true
 
-[node name="Player" parent="." instance=ExtResource( 4 )]
+[node name="Characters" type="Node" parent="."]
+
+[node name="Player" parent="Characters" instance=ExtResource( 4 )]
 transform = Transform( 0.0390854, 0, -0.999236, 0, 1, 0, 0.999236, 0, 0.0390854, 0, 2, 0 )
 mouse_sens = 0.05

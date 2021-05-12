@@ -8,6 +8,28 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Reference",
+"class": "Easing",
+"language": "GDScript",
+"path": "res://EasingFunctions.gd"
+}, {
+"base": "Reference",
+"class": "EasingV2",
+"language": "GDScript",
+"path": "res://EasingFunctions_V2.gd"
+}, {
+"base": "Reference",
+"class": "EasingV3",
+"language": "GDScript",
+"path": "res://EasingFunctions_V3.gd"
+} ]
+_global_script_class_icons={
+"Easing": "",
+"EasingV2": "",
+"EasingV3": ""
+}
+
 [application]
 
 config/name="FPS Course"
