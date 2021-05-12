@@ -1,0 +1,349 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Characters/player/CharacterMovement.gd" type="Script" id=1]
+[ext_resource path="res://Characters/player/Player.gd" type="Script" id=2]
+[ext_resource path="res://Characters/HealthManager.gd" type="Script" id=3]
+[ext_resource path="res://Characters/player/WeaponManager.gd" type="Script" id=4]
+[ext_resource path="res://weapons/Raw assets/machinegun.glb" type="PackedScene" id=6]
+[ext_resource path="res://weapons/Raw assets/rocketlauncher.glb" type="PackedScene" id=7]
+[ext_resource path="res://weapons/Raw assets/machete.glb" type="PackedScene" id=8]
+[ext_resource path="res://weapons/Raw assets/shotgun.glb" type="PackedScene" id=9]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.5
+
+[sub_resource type="Animation" id=3]
+resource_name = "attack"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Graphics:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.5 ),
+"transitions": PoolRealArray( 1.1487, 0.15932, 3.99999, 1.1487 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0.191483, 0.20837, 0.314532 ), Vector3( -0.82942, -0.273529, -0.61258 ), Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Graphics:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.5 ),
+"transitions": PoolRealArray( 1.31951, 0.129409, 1.68179, 1.31951 ),
+"update": 0,
+"values": [ Vector3( -1.57167, 0, 0 ), Vector3( 34.3563, 0, 0 ), Vector3( -60.649, 163.825, -107.214 ), Vector3( -1.57167, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "idle"
+length = 1.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Graphics:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Graphics:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.7, 1.5 ),
+"transitions": PoolRealArray( 0.594605, 0.757858, 0.594605 ),
+"update": 0,
+"values": [ Vector3( 0, 7.671, 0 ), Vector3( -1.99028, 5.65342, -0.196982 ), Vector3( 0, 7.671, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "attack"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Graphics:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 21.1121, 0.125001, 21.1121 ),
+"update": 0,
+"values": [ Vector3( 0.179009, 1.18054, -0.663924 ), Vector3( 0.179009, 1.18054, -0.622213 ), Vector3( 0.179009, 1.18054, -0.663924 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Graphics:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 3.73213, 1.51572, 3.73213 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 1.337, 0, 0 ), Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "idle"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Graphics:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 4.43827, 2.07053 ),
+"update": 0,
+"values": [ Vector3( 0.179009, 1.18054, -0.610742 ), Vector3( 0.179, 1.18, -0.611 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Graphics:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1.03527, 1.18921 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( -1.5, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "attack"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Graphics:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.8, 0.9, 1.1, 2 ),
+"transitions": PoolRealArray( 0.00866858, 0.0647042, 1.27456, 2.92817, 0.176777, 0.00866858 ),
+"update": 0,
+"values": [ Vector3( 0.0906458, 1.35025, -0.397299 ), Vector3( 0.0940634, 1.35736, -0.279651 ), Vector3( 0.0905064, 1.34789, -0.392973 ), Vector3( 0.104166, 1.3303, -0.303527 ), Vector3( 0.0905064, 1.34789, -0.392973 ), Vector3( 0.0906458, 1.35025, -0.397299 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Graphics:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.3, 0.8, 1.1, 2 ),
+"transitions": PoolRealArray( 1.6245, 1, 2.14354, 0.241484, 0.637279, 1.6245 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 7.34056, -0.0401478, -1.2625 ), Vector3( 3.04467, 0.092698, -0.647218 ), Vector3( 15.9193, 11.5144, 29.3503 ), Vector3( 15.9193, 11.5144, 29.3503 ), Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "idle"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Graphics:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 2.07053, 1.23114 ),
+"update": 0,
+"values": [ Vector3( 0.0906458, 1.35025, -0.397299 ), Vector3( 0.091, 1.356, -0.4 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Graphics:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 2.73208, 1.51572 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( -0.471, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "attack"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Graphics:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 1 ),
+"transitions": PoolRealArray( 1, 0.75786, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -1.555, 0 ), Vector3( 2.99, -1.555, 0 ), Vector3( 0, -1.555, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Graphics:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 1 ),
+"transitions": PoolRealArray( 1, 0.0603711, 0.0769462, 1 ),
+"update": 0,
+"values": [ Vector3( 0.302024, 1.53058, -0.311672 ), Vector3( 0.301512, 1.53079, -0.280836 ), Vector3( 0.301, 1.531, -0.25 ), Vector3( 0.302024, 1.53058, -0.311672 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "idle"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Graphics:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 2, 1.56917 ),
+"update": 0,
+"values": [ Vector3( 0, -1.555, 0 ), Vector3( -1.693, -1.09991, -0.0110022 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Graphics:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 9.18959, 0.329877 ),
+"update": 0,
+"values": [ Vector3( 0.302024, 1.53058, -0.311672 ), Vector3( 0.303, 1.531, -0.312 ) ]
+}
+
+[node name="Player" type="KinematicBody"]
+collision_layer = 6
+collision_mask = 3
+script = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.00111771, 0.96689, 0.0154283 )
+shape = SubResource( 1 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70167, 0 )
+current = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="WeaponManager" type="Spatial" parent="Camera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.70167, 0 )
+script = ExtResource( 4 )
+
+[node name="Weapons" type="Spatial" parent="Camera/WeaponManager"]
+
+[node name="Machete" type="Spatial" parent="Camera/WeaponManager/Weapons"]
+transform = Transform( 1, 0, 0, 0, 0.930245, 0.36694, 0, -0.36694, 0.930245, 0.300048, 1.47785, -0.668734 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera/WeaponManager/Weapons/Machete"]
+anims/attack = SubResource( 3 )
+anims/idle = SubResource( 2 )
+
+[node name="Graphics" type="Spatial" parent="Camera/WeaponManager/Weapons/Machete"]
+transform = Transform( 0.999999, 0, 0, 0, 0.99962, 0.0274273, 0, -0.0274273, 0.99962, 0, 0, 0 )
+
+[node name="machete" parent="Camera/WeaponManager/Weapons/Machete/Graphics" instance=ExtResource( 8 )]
+transform = Transform( 0.446697, 0.153352, -0.164148, -0.186204, 0.45715, -0.0796345, 0.125657, 0.132275, 0.465525, -0.0344842, -0.218818, -0.161298 )
+
+[node name="MachineGun" type="Spatial" parent="Camera/WeaponManager/Weapons"]
+visible = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera/WeaponManager/Weapons/MachineGun"]
+autoplay = "idle"
+anims/attack = SubResource( 5 )
+anims/idle = SubResource( 4 )
+
+[node name="Graphics" type="Spatial" parent="Camera/WeaponManager/Weapons/MachineGun"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.179009, 1.18054, -0.663924 )
+
+[node name="machinegun" parent="Camera/WeaponManager/Weapons/MachineGun/Graphics" instance=ExtResource( 6 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+
+[node name="Shotgun" type="Spatial" parent="Camera/WeaponManager/Weapons"]
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera/WeaponManager/Weapons/Shotgun"]
+autoplay = "idle"
+anims/attack = SubResource( 7 )
+anims/idle = SubResource( 6 )
+
+[node name="Graphics" type="Spatial" parent="Camera/WeaponManager/Weapons/Shotgun"]
+transform = Transform( 0.5, 0, 0, 0, 0.499999, 0.000618628, 0, -0.000618628, 0.499999, 0.0907301, 1.35162, -0.397942 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="shotgun" parent="Camera/WeaponManager/Weapons/Shotgun/Graphics" instance=ExtResource( 9 )]
+
+[node name="RocketLauncher" type="Spatial" parent="Camera/WeaponManager/Weapons"]
+visible = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera/WeaponManager/Weapons/RocketLauncher"]
+autoplay = "idle"
+anims/attack = SubResource( 9 )
+anims/idle = SubResource( 8 )
+
+[node name="Graphics" type="Spatial" parent="Camera/WeaponManager/Weapons/RocketLauncher"]
+transform = Transform( 0.344613, -0.000272819, -0.0124339, 0, 0.358092, -0.012864, 0.00935504, 0.0100499, 0.458028, 0.302022, 1.53058, -0.311534 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="rocketlauncher" parent="Camera/WeaponManager/Weapons/RocketLauncher/Graphics" instance=ExtResource( 7 )]
+
+[node name="CharacterMovement" type="Spatial" parent="."]
+script = ExtResource( 1 )
+move_acceleration = 2
+max_speed = 10
+jump_force = 17
+gravity = 65
+
+[node name="HealthManager" type="Spatial" parent="."]
+script = ExtResource( 3 )
+
+[node name="Debugging timer" type="Spatial" parent="."]
+
+[node name="Damage" type="Timer" parent="Debugging timer"]
+
+[node name="healing" type="Timer" parent="Debugging timer"]
+
+[connection signal="timeout" from="Debugging timer/Damage" to="." method="hurt" binds= [ 1, Vector3( 0, 0, 0 ) ]]
+[connection signal="timeout" from="Debugging timer/healing" to="." method="hurt" binds= [ 38, Vector3( 0, 0, 0 ) ]]
